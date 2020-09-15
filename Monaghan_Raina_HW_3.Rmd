@@ -1,0 +1,38 @@
+---
+title: "Entity: CPSC 441 HW 3"
+author: "Raina Mon"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# CPSC 441 Homework 3
+
+## 1. Write a function to calculate the mean:
+```{r}
+avg = function(argument){
+  average = sum(argument)/length(argument)
+  return(average)
+}
+```
+
+## 2. Calculate the range of the variable "Year":
+```{r}
+key_crop_yields <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-09-01/key_crop_yields.csv")
+range(key_crop_yields$Year)
+```
+
+## 3. Calculate the mean of "Maize (tonnes per hectare):
+```{r}
+key_crop_yields[is.na(x = key_crop_yields)] <- 0
+x <- key_crop_yields$Maize..tonnes.per.hectare.
+avg(x)
+```
+
+## Save "Entity" as a file:
+
+```{r}
+write.csv(key_crop_yields$Entity, [file = "Entity.csv")
+```
